@@ -4,7 +4,7 @@ Proyecto final del **Solana Engineering Track: Advanced** (WayLearn / Solana Fou
 
 ## Autor
 - Nombre para el certificado: Luis Rolando López Ramírez
-- Correo de registro: [tu correo]
+- Correo de registro: lrlramirez.710@gmail.com
 
 ## Ruta elegida
 Proyecto guiado del bootcamp (punto de venta con tiendas, productos y ventas) más el reto de
