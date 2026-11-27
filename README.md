@@ -17,8 +17,8 @@ modificar sus datos.
 
 ## Despliegue
 - Red: Devnet
-- Program ID: `BdkdD89WkFsyeUCj3NArTvmDfuxst4Hp9m4HUSQeJKWy`
-- Explorer: https://explorer.solana.com/address/BdkdD89WkFsyeUCj3NArTvmDfuxst4Hp9m4HUSQeJKWy?cluster=devnet
+- Program ID: `8xkiiCoTvmu8BPZyBBEYnqAFhomM3ZjZvcVuPfcuYduf`
+- Explorer: https://explorer.solana.com/address/8xkiiCoTvmu8BPZyBBEYnqAFhomM3ZjZvcVuPfcuYduf?cluster=devnet
 
 ## Cuentas (PDAs)
 | Cuenta | Seeds | Datos |
@@ -56,12 +56,13 @@ Solana CLI 2.1.x, Anchor 0.31.x, Node 20 o superior, Phantom en Devnet.
 
 ## Ejecución
 ```bash
-# pruebas (localnet)
+# pruebas (localnet): genera una llave local para el programa
+anchor keys sync
 anchor build
 anchor test
 
-# despliegue en Devnet: compila, despliega y copia el IDL al frontend
-bash desplegar.sh
+# el programa ya esta desplegado en Devnet (Solana Playground).
+# Para desplegar una copia propia: bash desplegar.sh
 
 # frontend
 cd app
@@ -72,5 +73,6 @@ SOL de prueba: https://faucet.solana.com
 
 ## Pruebas y evidencias
 - `anchor test`: 13 pruebas pasando (`docs/evidencias/anchor-test.txt`).
-- Transacción verificable en Devnet: [enlace a Explorer]
+- Flujo probado en Devnet (venta, rechazo por falta de stock, reabastecimiento y nueva venta): `docs/evidencias/transacciones-devnet.md`
+- Transacción verificable (reabastecimiento): https://explorer.solana.com/tx/4AVRe6rPPXNg29SvXFbEPa15cbKENFMjzUBpzwzWMUAMN11NTnizVcCBWmzJB1aa8wWdLRna4CZtFABuxTaiB1hy?cluster=devnet
 - Capturas: `docs/evidencias/`

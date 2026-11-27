@@ -5,10 +5,10 @@ resolution = false
 skip-lint = false
 
 [programs.devnet]
-punto_venta = "BdkdD89WkFsyeUCj3NArTvmDfuxst4Hp9m4HUSQeJKWy"
+punto_venta = "8xkiiCoTvmu8BPZyBBEYnqAFhomM3ZjZvcVuPfcuYduf"
 
 [programs.localnet]
-punto_venta = "BdkdD89WkFsyeUCj3NArTvmDfuxst4Hp9m4HUSQeJKWy"
+punto_venta = "8xkiiCoTvmu8BPZyBBEYnqAFhomM3ZjZvcVuPfcuYduf"
 
 [provider]
 cluster = "localnet"

@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("BdkdD89WkFsyeUCj3NArTvmDfuxst4Hp9m4HUSQeJKWy");
+declare_id!("8xkiiCoTvmu8BPZyBBEYnqAFhomM3ZjZvcVuPfcuYduf");
 
 // Limite por reabastecimiento (evita errores de captura)
 pub const MAX_REABASTO: u32 = 10_000;
