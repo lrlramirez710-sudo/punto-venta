@@ -1,0 +1,25 @@
+
+Found a 'test' script in the Anchor.toml. Running it as a test suite!
+
+Running test suite: "/home/claude/pos/Anchor.toml"
+
+
+
+  punto_venta
+    ✔ crea la tienda (228ms)
+    ✔ agrega un producto con precio y stock (417ms)
+    ✔ actualiza el precio (409ms)
+    ✔ registra una venta y descuenta el stock (419ms)
+    ✔ rechaza una venta sin stock suficiente
+    ✔ rechaza una venta con cantidad 0
+    ✔ RETO: reabastece y el nuevo stock queda registrado (389ms)
+    ✔ RETO: despues de reabastecer ya se puede vender lo que antes fallaba (412ms)
+    ✔ RETO: rechaza reabastecer con cantidad 0
+    ✔ RETO: rechaza reabastecer arriba del limite
+    ✔ RETO: otra wallet no puede reabastecer la tienda
+    ✔ no permite eliminar un producto con existencias
+    ✔ elimina un producto sin existencias (789ms)
+
+
+  13 passing (3s)
+

@@ -1,0 +1,436 @@
+{
+  "address": "BdkdD89WkFsyeUCj3NArTvmDfuxst4Hp9m4HUSQeJKWy",
+  "metadata": {
+    "name": "punto_venta",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "actualizar_precio",
+      "discriminator": [
+        128,
+        225,
+        245,
+        253,
+        115,
+        119,
+        118,
+        207
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true
+        },
+        {
+          "name": "tienda"
+        },
+        {
+          "name": "producto",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "precio",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "agregar_producto",
+      "discriminator": [
+        136,
+        81,
+        71,
+        30,
+        36,
+        197,
+        140,
+        61
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "tienda",
+          "writable": true
+        },
+        {
+          "name": "producto",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "nombre",
+          "type": "string"
+        },
+        {
+          "name": "precio",
+          "type": "u64"
+        },
+        {
+          "name": "stock",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "crear_tienda",
+      "discriminator": [
+        90,
+        99,
+        78,
+        23,
+        210,
+        189,
+        106,
+        157
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "tienda",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "nombre",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "eliminar_producto",
+      "discriminator": [
+        153,
+        235,
+        155,
+        3,
+        8,
+        167,
+        242,
+        166
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "tienda"
+        },
+        {
+          "name": "producto",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "reabastecer_producto",
+      "discriminator": [
+        98,
+        195,
+        83,
+        111,
+        129,
+        88,
+        250,
+        141
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true
+        },
+        {
+          "name": "tienda"
+        },
+        {
+          "name": "producto",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "cantidad",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "registrar_venta",
+      "discriminator": [
+        47,
+        95,
+        122,
+        187,
+        82,
+        62,
+        119,
+        131
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "tienda",
+          "writable": true
+        },
+        {
+          "name": "producto",
+          "writable": true
+        },
+        {
+          "name": "venta",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "cantidad",
+          "type": "u32"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Producto",
+      "discriminator": [
+        207,
+        24,
+        37,
+        22,
+        48,
+        57,
+        208,
+        98
+      ]
+    },
+    {
+      "name": "Tienda",
+      "discriminator": [
+        128,
+        49,
+        93,
+        255,
+        182,
+        34,
+        38,
+        169
+      ]
+    },
+    {
+      "name": "Venta",
+      "discriminator": [
+        46,
+        19,
+        228,
+        71,
+        14,
+        149,
+        86,
+        78
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "ProductoReabastecido",
+      "discriminator": [
+        174,
+        39,
+        228,
+        75,
+        25,
+        96,
+        229,
+        177
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "NombreInvalido",
+      "msg": "El nombre debe tener entre 1 y 32 caracteres"
+    },
+    {
+      "code": 6001,
+      "name": "PrecioInvalido",
+      "msg": "El precio debe ser mayor a cero"
+    },
+    {
+      "code": 6002,
+      "name": "CantidadInvalida",
+      "msg": "La cantidad debe ser mayor a cero"
+    },
+    {
+      "code": 6003,
+      "name": "StockInsuficiente",
+      "msg": "No hay suficiente stock para esta venta"
+    },
+    {
+      "code": 6004,
+      "name": "ReabastoExcedido",
+      "msg": "La cantidad a reabastecer excede el limite permitido"
+    },
+    {
+      "code": 6005,
+      "name": "ProductoConStock",
+      "msg": "No se puede eliminar un producto que todavia tiene existencias"
+    },
+    {
+      "code": 6006,
+      "name": "Desbordamiento",
+      "msg": "Desbordamiento numerico"
+    }
+  ],
+  "types": [
+    {
+      "name": "Producto",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "tienda",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u64"
+          },
+          {
+            "name": "nombre",
+            "type": "string"
+          },
+          {
+            "name": "precio",
+            "type": "u64"
+          },
+          {
+            "name": "stock",
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProductoReabastecido",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "producto",
+            "type": "pubkey"
+          },
+          {
+            "name": "cantidad",
+            "type": "u32"
+          },
+          {
+            "name": "stock",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tienda",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "nombre",
+            "type": "string"
+          },
+          {
+            "name": "num_productos",
+            "type": "u64"
+          },
+          {
+            "name": "num_ventas",
+            "type": "u64"
+          },
+          {
+            "name": "total_vendido",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Venta",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "tienda",
+            "type": "pubkey"
+          },
+          {
+            "name": "producto",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u64"
+          },
+          {
+            "name": "cantidad",
+            "type": "u32"
+          },
+          {
+            "name": "total",
+            "type": "u64"
+          },
+          {
+            "name": "fecha",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

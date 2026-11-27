@@ -1,0 +1,3 @@
+Despues de `anchor build` copia aqui:
+  target/idl/punto_venta.json -> app/src/idl/punto_venta.json
+(desplegar.sh lo hace solo)
